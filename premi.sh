@@ -101,11 +101,7 @@ NC='\e[0m'
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
 clear
-#IZIN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mloading...\e[0m" 
-clear
-# Version sc
+UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 clear
 #########################
 # USERNAME
@@ -1072,9 +1068,6 @@ rm -rf /root/domain
 #sudo hostnamectl set-hostname $user
 secs_to_human "$(($(date +%s) - ${start}))"
 echo ""
-echo " "
-echo "=====================-[ VvipPrem ]-===================="
-echo ""
 echo "------------------------------------------------------------"
 echo ""
 echo ""
@@ -1106,8 +1099,6 @@ echo "   - Shadowsocks gRPC         : 443" | tee -a log-install.txt
 echo ""
 echo ""
 echo "------------------------------------------------------------"
-echo ""
-echo "=====================-[ VvipPrem ]-===================="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
@@ -1115,5 +1106,5 @@ echo -e ""
 sudo hostnamectl set-hostname $username
 echo -e "${green} Script Successfull Installed"
 echo ""
-read -p "$( echo -e "Press ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} For Reboot") "
-reboot
+read -p "$( echo -e "Klik ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} Untuk Install UDP Custom ") "
+wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
