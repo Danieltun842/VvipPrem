@@ -1,7 +1,4 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 clear
 fun_bar() {
     CMD[0]="$1"
@@ -48,5 +45,6 @@ echo -e "  \033[1;91m update script service\033[1;37m"
 fun_bar 'res1'
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
+rm -rf update.sh
 read -n 1 -s -r -p "Press [ Enter ] to back on menu"
 menu
