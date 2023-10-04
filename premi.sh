@@ -693,9 +693,9 @@ systemctl enable qmtr
 mkdir -p /usr/local/kyt/
 wget -q -O /usr/local/kyt/udp-mini "${REPO}files/udp-mini"
 chmod +x /usr/local/kyt/udp-mini
-wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}badvpn/udp-mini-1.service"
-wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}badvpn/udp-mini-2.service"
-wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}badvpn/udp-mini-3.service"
+wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}files/udp-mini-1.service"
+wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}files/udp-mini-2.service"
+wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}files/udp-mini-3.service"
 systemctl disable udp-mini-1
 systemctl stop udp-mini-1
 systemctl enable udp-mini-1
